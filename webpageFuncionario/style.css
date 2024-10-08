@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+
+.card-funcionario{
+    border: 1px solid black;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px black;
+    width: max-content;
+    padding: 8px 16px;
+}
+
+.header-site{
+    background-color: #222E50;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.header-link-list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-link a{
+    padding: 2px 15px;
+    display: inline-block;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.header-link a:hover{
+    box-shadow: 0 2px 0 white;
+}
+
+
+.cadastro{
+    margin-top: 5rem;
+    display: flex;
+
+}
+.cadastro h1{
+    font-size: 30px;
+}
+
+.form-cadastro{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form-cadastro{
+    height: 40px;
+    width: 600px;
+}
+
+.footer-site{
+    background-color: #222E50;
+}
