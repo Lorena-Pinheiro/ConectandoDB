@@ -49,10 +49,28 @@
 
             <input type="text" name="tel" id="tel" placeholder="Telefone: " class="input-form-cadastro">
 
-            <input type="submit" value="Cadastrar">
+            <input type="submit" value="Cadastrar" class="cadastro-button">
         </form>
-    </section>
+        <?php
+            $servidor = 'localhost';
+            $usuario = 'root';
+            $senha = '';
+            $banco_de_dados = 'empresa';
+            $conexao = mysqli_connect($servidor,$usuario,$senha,$banco_de_dados);
 
+            if(isset($_GET['nome'], $_GET['salario'], $_GET['cargo'], $_GET['idade'], $_GET['tel'])) {
+                $nome = $_GET['nome']; 
+                $salario = $_GET['salario'];
+                $cargo = $_GET['cargo'];
+                $idade = $_GET['idade'];    
+                $tel = $_GET['tel'];
+
+                $conexao->query("insert into funcionario (nome, cargo, idade, tel, salario) values ('$nome', '$cargo', '$idade', '$tel', '$salario')");
+                $conexao->close();
+            }
+        ?>
+    </section>
+    
 
     <section class="filter">
         <form method="get" class="form-filter">
@@ -66,44 +84,39 @@
                 <option value="Consultor">Consultor</option>
             </select>
 
-            <input type="submit" value="Filtrar">
+            <input type="submit" value="Filtrar" class="filter-button">
         </form>
+
+        <div class="card-container">
+            <?php
+                $servidor = 'localhost';
+                $usuario = 'root';
+                $senha = '';
+                $banco_de_dados = 'empresa';
+                $conexao = mysqli_connect($servidor,$usuario,$senha,$banco_de_dados);
+                
+                if(isset($_GET['cargo-filter']) && $_GET['cargo-filter'] != "Selecionar" ){
+                    $cargoFilter = $_GET['cargo-filter'];
+                    $selectFuncionarios = $conexao->query("select * from funcionario where cargo = '$cargoFilter'");
+                    $rowFuncionario = $selectFuncionarios->fetch_all(MYSQLI_ASSOC);
+                    foreach ($rowFuncionario as $funcionario){
+                        include 'template.php';
+                    };
+                }else if(!isset($_GET['cargo-filter']) || ($_GET['cargo-filter'] == "Selecionar")){
+                    $selectFuncionarios = $conexao->query('select * from funcionario');
+                    $rowFuncionario = $selectFuncionarios->fetch_all(MYSQLI_ASSOC);
+                    foreach ($rowFuncionario as $funcionario){
+                        include 'template.php';
+                    };
+                }
+
+                $conexao->close();
+            ?>
+        </div>
+        
     </section>
 
-    <?php
-        $servidor = 'localhost';
-        $usuario = 'root';
-        $senha = '';
-        $banco_de_dados = 'empresa';
-        $conexao = mysqli_connect($servidor,$usuario,$senha,$banco_de_dados);
-
-        if(isset($_GET['nome'], $_GET['salario'], $_GET['cargo'], $_GET['idade'], $_GET['tel'])) {
-            $nome = $_GET['nome']; 
-            $salario = $_GET['salario'];
-            $cargo = $_GET['cargo'];
-            $idade = $_GET['idade'];    
-            $tel = $_GET['tel'];
-
-            $conexao->query("insert into funcionario (nome, cargo, idade, tel, salario) values ('$nome', '$cargo', '$idade', '$tel', '$salario')");
-            $conexao->close();
-        }
-
-        
-        if(isset($_GET['cargo-filter']) && $_GET['cargo-filter'] != "Selecionar" ){
-            $cargoFilter = $_GET['cargo-filter'];
-            $selectFuncionarios = $conexao->query("select * from funcionario where cargo = '$cargoFilter'");
-            $rowFuncionario = $selectFuncionarios->fetch_all(MYSQLI_ASSOC);
-            foreach ($rowFuncionario as $funcionario){
-                include 'template.php';
-            };
-        }else if(!isset($_GET['cargo-filter']) || ($_GET['cargo-filter'] == "Selecionar")){
-            $selectFuncionarios = $conexao->query('select * from funcionario');
-            $rowFuncionario = $selectFuncionarios->fetch_all(MYSQLI_ASSOC);
-            foreach ($rowFuncionario as $funcionario){
-                include 'template.php';
-            };
-        }
-    ?>
+    
     
 
     <footer class="footer-site">

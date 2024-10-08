@@ -13,7 +13,7 @@ body{
     border: 1px solid black;
     border-radius: 6px;
     box-shadow: 1px 1px 1px black;
-    width: max-content;
+    width: 300px;
     padding: 8px 16px;
 }
 
@@ -47,24 +47,66 @@ body{
     box-shadow: 0 2px 0 white;
 }
 
-
-.cadastro{
-    margin-top: 5rem;
-    display: flex;
-
-}
-.cadastro h1{
-    font-size: 30px;
+.cadastro {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
-.form-cadastro{
+.form-cadastro {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-.input-form-cadastro{
-    height: 40px;
-    width: 600px;
+.input-form-cadastro, select, .cadastro-button {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cadastro-button {
+    background-color: #222E50;
+    color: white;
+    cursor: pointer;
+}
+
+.cadastro-button:hover {
+    background-color: #333B58;
+}
+
+.filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-filter{
+    margin-bottom: 2rem;
+}
+
+.filter-button{
+    background-color: #222E50;
+    color: white;
+    cursor: pointer;
+    height: 35px;
+    width: 100px;
+    margin-left: 1rem;
+}
+
+.filter-button:hover{
+    background-color: #333B58;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center; 
+    margin-bottom: 3rem;
 }
 
 .footer-site{
