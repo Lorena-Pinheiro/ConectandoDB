@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Studio Ghibli</title>
 </head>
 <body>
 
@@ -115,8 +115,6 @@
         </div>
         
     </section>
-
-    
     
 
     <footer class="footer-site">
@@ -124,8 +122,6 @@
             <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c45c69b2-249c-40d1-9981-6c7ade872a9a/dhbd04u-48418a16-5a7c-450d-8eb1-339ae02fc660.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M0NWM2OWIyLTI0OWMtNDBkMS05OTgxLTZjN2FkZTg3MmE5YVwvZGhiZDA0dS00ODQxOGExNi01YTdjLTQ1MGQtOGViMS0zMzlhZTAyZmM2NjAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.bRyLL2GHKUjx8OjEKWJlPecsWWlcqYhve6RYE58HwDo" alt="logo">
         </a>
     </footer>
-
-    
 
 </body>
 </html>

@@ -1,4 +1,5 @@
 <div class="card-funcionario">
+    
     <header class="header-card">
         <h2>Nome: <?= $funcionario['nome']?></h2>
         <p>Cargo: <?= $funcionario['cargo']?></p>
